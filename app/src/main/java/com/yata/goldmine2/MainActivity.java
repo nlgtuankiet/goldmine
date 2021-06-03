@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences.edit()
                 .putInt("save_mine_count_2", mineCount)
                 .commit();
+        Log.d("phong", "saved");
     }
 
     @Override
