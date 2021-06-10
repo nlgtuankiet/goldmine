@@ -21,11 +21,11 @@ public class ResultActivity extends AppCompatActivity {
         result = findViewById(R.id.result);
         restart = findViewById(R.id.restart);
         Intent intent = getIntent();
-        int goldCount = intent.getIntExtra("gold_count", -1);
+        int goldCount = intent.getIntExtra(GOLD_COUNT_EXTRA, -1);
         result.setText("Score: " + goldCount);
         restart.setOnClickListener(v -> {
             Intent intent1 = new Intent(ResultActivity.this, MainActivity.class);
-            getSharedPreferences("my_preference", Context.MODE_PRIVATE)
+            Utility.getMainSharePreferences(this)
                     .edit()
                     .putInt("save_mine_count_2", 0)
                     .putInt("gold_count", 0)
@@ -34,4 +34,12 @@ public class ResultActivity extends AppCompatActivity {
             finish();
         });
     }
+
+    public static Intent starterIntent(Context context, int goldCount) {
+        Intent intent = new Intent(context, ResultActivity.class);
+        intent.putExtra(GOLD_COUNT_EXTRA, goldCount);
+        return intent;
+    }
+
+    private static final String GOLD_COUNT_EXTRA = "gold_count";
 }

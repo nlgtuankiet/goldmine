@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sharedPreferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE);
+        sharedPreferences = Utility.getMainSharePreferences(this);
         title = findViewById(R.id.mine_count_text_view);
         result = findViewById(R.id.result);
 
@@ -72,14 +72,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void invalidate() {
         if (mineCount > 9) {
-            Intent intent = new Intent(this, ResultActivity.class);
-            intent.putExtra("gold_count", goldCount);
+            Intent intent = ResultActivity.starterIntent(this, goldCount);
             startActivity(intent);
             finish();
         }
         title.setText("Mined " + mineCount + " times");
         result.setText("Gold count: " + goldCount);
     }
-
 
 }
