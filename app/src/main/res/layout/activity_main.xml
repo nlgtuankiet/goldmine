@@ -18,7 +18,7 @@
 
 
     <Button
-        android:text="Mine"
+        android:text="@string/mine_button"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

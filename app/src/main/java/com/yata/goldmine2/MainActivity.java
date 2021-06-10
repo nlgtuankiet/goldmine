@@ -80,4 +80,9 @@ public class MainActivity extends AppCompatActivity {
         result.setText("Gold count: " + goldCount);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("phong", "onDestroy");
+    }
 }
