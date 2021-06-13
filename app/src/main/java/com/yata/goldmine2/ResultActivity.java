@@ -30,6 +30,7 @@ public class ResultActivity extends AppCompatActivity {
                     .putInt("save_mine_count_2", 0)
                     .putInt("gold_count", 0)
                     .commit();
+            // them hinh anh
             startActivity(intent1);
             finish();
         });
