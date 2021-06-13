@@ -32,6 +32,7 @@ public class ResultActivity extends AppCompatActivity {
                     .commit();
             // them hinh anh
             // them comment
+            // them comment
             startActivity(intent1);
             finish();
         });
