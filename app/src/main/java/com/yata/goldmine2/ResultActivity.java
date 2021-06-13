@@ -31,6 +31,7 @@ public class ResultActivity extends AppCompatActivity {
                     .putInt("gold_count", 0)
                     .commit();
             // them hinh anh
+            // them comment
             startActivity(intent1);
             finish();
         });
